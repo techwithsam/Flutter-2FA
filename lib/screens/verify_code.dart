@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otp/otp.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:pinput/pinput.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class VerifyCode extends StatefulWidget {
   final Widget successPage;
@@ -101,9 +101,9 @@ class _VerifyCodeState extends State<VerifyCode> {
                     length: 6,
                     controller: codeController,
                     focusNode: focusNode,
-                    androidSmsAutofillMethod:
-                        AndroidSmsAutofillMethod.smsUserConsentApi,
-                    listenForMultipleSmsOnAndroid: true,
+                    // androidSmsAutofillMethod:
+                    //     AndroidSmsAutofillMethod.smsUserConsentApi,
+                    // listenForMultipleSmsOnAndroid: true,
                     defaultPinTheme: defaultPinTheme,
                     hapticFeedbackType: HapticFeedbackType.lightImpact,
                     onCompleted: (pin) {
@@ -155,13 +155,13 @@ class _VerifyCodeState extends State<VerifyCode> {
                         });
                       },
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.transparent),
-                        shadowColor: MaterialStateProperty.all<Color>(
-                            Colors.transparent),
-                        overlayColor: MaterialStateProperty.resolveWith(
+                        backgroundColor:
+                            WidgetStateProperty.all<Color>(Colors.transparent),
+                        shadowColor:
+                            WidgetStateProperty.all<Color>(Colors.transparent),
+                        overlayColor: WidgetStateProperty.resolveWith(
                           (states) {
-                            return states.contains(MaterialState.pressed)
+                            return states.contains(WidgetState.pressed)
                                 ? Colors.red.withOpacity(0.1)
                                 : null;
                           },
