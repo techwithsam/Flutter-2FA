@@ -161,14 +161,14 @@ class _GenerateCodeState extends State<GenerateCode> {
                         });
                       },
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                             Colors.transparent),
-                        shadowColor: MaterialStateProperty.all<Color>(
+                        shadowColor: WidgetStateProperty.all<Color>(
                             Colors.transparent),
-                        overlayColor: MaterialStateProperty.resolveWith(
+                        overlayColor: WidgetStateProperty.resolveWith(
                           (states) {
-                            return states.contains(MaterialState.pressed)
-                                ? Colors.red.withOpacity(0.1)
+                            return states.contains(WidgetState.pressed)
+                                ? Colors.red.withValues(alpha: 0.1)
                                 : null;
                           },
                         ),

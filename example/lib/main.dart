@@ -48,8 +48,7 @@ class MyHome extends StatelessWidget {
                     onPressed: () => Flutter2FA()
                         .verify(context: context, page: const Success()),
                     style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.green),
+                      backgroundColor: WidgetStateProperty.all(Colors.green),
                     ),
                     child: const Text('Login with 2FA'),
                   ))
